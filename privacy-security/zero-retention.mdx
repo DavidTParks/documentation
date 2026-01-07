@@ -1,0 +1,198 @@
+---
+title: "Zero Data Retention Policy"
+description: "What it means and how we minimize data storage"
+icon: "eraser"
+---
+
+## We keep only what we need
+
+Tendrill operates on a principle of data minimization: we only store what's absolutely necessary to provide the service, and we delete data as soon as it's no longer needed.
+
+<Info>
+**Zero data retention** doesn't mean we store nothing — it means we store the minimum required and don't retain data beyond its useful life.
+</Info>
+
+## What zero retention means
+
+### Data we DON'T retain
+
+| Data Type | Retention | Notes |
+|-----------|-----------|-------|
+| **Brokerage credentials** | Never stored | You authenticate directly with Plaid |
+| **Bank account numbers** | Never stored | Not needed for our service |
+| **Social Security Number** | Never accessed | Never requested |
+| **Full transaction details** | Minimal retention | Only recent history for context |
+| **Browsing/usage analytics** | Minimal | Anonymized, aggregated only |
+
+### Data we DO retain (minimally)
+
+| Data Type | Retention Period | Why We Need It |
+|-----------|-----------------|----------------|
+| **Phone number** | While account active | Your account identity |
+| **Current holdings** | While connected | Portfolio monitoring |
+| **Conversation history** | Limited time | Context for follow-ups |
+| **Alert preferences** | While account active | Deliver alerts you've set |
+
+## How this works in practice
+
+### When you connect an account
+
+```
+1. You authenticate with your brokerage via Plaid
+   → Tendrill never sees your password
+
+2. Plaid sends us your holdings
+   → We store: symbol, quantity, value
+   → We don't store: account numbers, routing numbers
+
+3. We build your portfolio model
+   → Only what's needed for monitoring
+```
+
+### When you disconnect
+
+```
+1. You disconnect an account
+
+2. Within 24 hours:
+   → Holdings data for that account: DELETED
+   → Price alerts for those holdings: CANCELLED
+   → Historical sync data: PURGED
+
+3. Your conversation history remains
+   → (Can be deleted separately on request)
+```
+
+### When you delete your account
+
+```
+1. You request account deletion
+
+2. We delete:
+   → All portfolio data
+   → All conversation history
+   → All preferences and settings
+   → Phone number association
+
+3. Completed within:
+   → 24 hours for active data
+   → 30 days for backups (then purged)
+```
+
+## Data lifecycle
+
+<Steps>
+  <Step title="Collection">
+    We collect only what Plaid provides and only what you explicitly share
+  </Step>
+  <Step title="Use">
+    Data is used exclusively to provide your portfolio monitoring service
+  </Step>
+  <Step title="Storage">
+    Stored encrypted, with access limited to essential systems
+  </Step>
+  <Step title="Deletion">
+    Automatically deleted when no longer needed or upon your request
+  </Step>
+</Steps>
+
+## Comparison with other services
+
+| Practice | Many Apps | Tendrill |
+|----------|-----------|----------|
+| Sell data to advertisers | ✅ Common | ❌ Never |
+| Store passwords | Sometimes | ❌ Never |
+| Retain data indefinitely | ✅ Common | ❌ Time-limited |
+| Share with "partners" | ✅ Common | ❌ Never |
+| Use for training AI models | ✅ Common | ❌ Never* |
+
+*We may use anonymized, aggregated patterns to improve our service, but never individual portfolio data.
+
+## What "anonymized" means
+
+When we say data is anonymized:
+
+- **Your identity is removed** — No way to trace back to you
+- **Aggregated** — Combined with thousands of others
+- **Statistical only** — Used for trends, not individual analysis
+
+Example: "60% of users check their portfolio on Monday mornings"
+Not: "David checks his portfolio at 7:32 AM"
+
+## Your data rights
+
+Under various privacy laws (CCPA, GDPR equivalents), you have the right to:
+
+<CardGroup cols={2}>
+  <Card title="Access" icon="eye">
+    Request a copy of all data we have about you
+  </Card>
+  <Card title="Deletion" icon="trash">
+    Request complete deletion of your data
+  </Card>
+  <Card title="Correction" icon="pen">
+    Request correction of inaccurate data
+  </Card>
+  <Card title="Portability" icon="download">
+    Receive your data in a portable format
+  </Card>
+</CardGroup>
+
+To exercise these rights, contact privacy@tendrill.ai or text "privacy options" to Tendrill.
+
+## Audit trail
+
+We maintain internal audit logs for security:
+
+- **What**: Actions taken on your account
+- **When**: Timestamps of data access
+- **Who**: System or personnel involved
+- **Why**: Purpose of access
+
+These logs help us detect unauthorized access and maintain accountability.
+
+## Changes to this policy
+
+If we ever change our data retention practices:
+
+1. We'll notify you via text message
+2. We'll update this documentation
+3. Major changes require your consent
+4. You can always delete your data if you disagree
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why do you need to store any data?">
+    To provide the service, we need to know what you own to monitor it. We can't alert you about NVDA earnings if we don't know you own NVDA. But we minimize what we store and delete it when no longer needed.
+  </Accordion>
+  
+  <Accordion title="Is my conversation history stored?">
+    Yes, for a limited time to provide context for follow-up questions. "How's that stock doing?" only makes sense if we remember what stock you asked about. You can request deletion of conversation history.
+  </Accordion>
+  
+  <Accordion title="What happens if Tendrill shuts down?">
+    We would notify all users, provide time to export data, then securely delete all user data. Our policy ensures data doesn't persist beyond usefulness.
+  </Accordion>
+  
+  <Accordion title="Can law enforcement access my data?">
+    We comply with valid legal requests (subpoenas, court orders). We would:
+    1. Verify the request is valid
+    2. Provide only what's legally required
+    3. Notify you if legally permitted
+    
+    We've never received a law enforcement request to date.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Disconnect & Delete" icon="trash" href="/privacy-security/disconnecting">
+    Learn how to remove your data
+  </Card>
+  <Card title="What We Never Do" icon="hand" href="/privacy-security/never-does">
+    Explicit commitments about your data
+  </Card>
+</CardGroup>
+

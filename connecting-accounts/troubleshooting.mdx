@@ -1,0 +1,206 @@
+---
+title: "Troubleshooting Connection Issues"
+description: "Solutions for common problems when linking your brokerage accounts"
+icon: "wrench"
+---
+
+## Connection problems? We can help.
+
+Most connection issues have simple solutions. Find your situation below and follow the steps to get connected.
+
+## Common issues and solutions
+
+<AccordionGroup>
+  <Accordion title="My brokerage doesn't appear in search" icon="magnifying-glass">
+    **Try these steps:**
+    
+    1. **Use different search terms** — Try "Schwab" instead of "Charles Schwab", or "Merrill" instead of "Merrill Lynch"
+    2. **Check for parent companies** — Some brokerages appear under their parent (e.g., TD Ameritrade may be under Charles Schwab after the merger)
+    3. **Search by website URL** — Try searching for your brokerage's login website
+    4. **Check our [supported list](/getting-started/supported-brokerages)** — Confirm your institution is in our supported list
+    
+    <Info>
+    If your brokerage truly isn't supported, [contact us](mailto:support@tendrill.ai) to request it.
+    </Info>
+  </Accordion>
+  
+  <Accordion title="'Invalid credentials' error" icon="key">
+    **This usually means:**
+    - Your username or password was entered incorrectly
+    - Your brokerage password recently changed
+    - You're using credentials for a different account
+    
+    **Try these steps:**
+    
+    1. **Log in directly at your brokerage's website** — Confirm your credentials work there first
+    2. **Check for typos** — Usernames and passwords are case-sensitive
+    3. **Try the 'forgot password' flow** at your brokerage if needed
+    4. **Look for special characters** — Some passwords with symbols may need careful entry
+  </Accordion>
+  
+  <Accordion title="Two-factor authentication problems" icon="mobile">
+    **If you're not receiving your 2FA code:**
+    
+    1. **Check the right device** — Codes may go to a phone number or email you don't check often
+    2. **Wait a moment** — SMS codes can be delayed by a few minutes
+    3. **Check spam/junk folders** — Email codes sometimes get filtered
+    4. **Try an alternate 2FA method** — Many brokerages offer backup options
+    
+    **If your authenticator app isn't working:**
+    
+    1. **Verify the time on your device** — Authenticator apps are time-sensitive
+    2. **Use backup codes** — Most brokerages provide backup codes during 2FA setup
+    3. **Contact your brokerage** — They can help reset 2FA if needed
+  </Accordion>
+  
+  <Accordion title="'Additional verification required'" icon="shield">
+    **This means your brokerage wants extra confirmation:**
+    
+    1. **Check your email and phone** — Your brokerage may have sent a verification request
+    2. **Log in directly to your brokerage** — Sometimes you need to approve a new connection from their website
+    3. **Answer security questions** — Plaid may ask you to answer questions your brokerage has on file
+    4. **Wait 24 hours** — Some security holds lift automatically
+    
+    <Warning>
+    Never share security question answers or passwords with anyone claiming to be from Tendrill. We will never ask for this information directly.
+    </Warning>
+  </Accordion>
+  
+  <Accordion title="Connection worked, but data is missing" icon="database">
+    **If some accounts or holdings aren't showing:**
+    
+    1. **Wait for full sync** — Initial data can take up to 24 hours to fully populate
+    2. **Check account selection** — You may have unchecked some accounts during connection
+    3. **Trigger a manual refresh** — Text "refresh my portfolio" to Tendrill
+    4. **Reconnect the account** — Sometimes a fresh connection resolves data issues
+    
+    **Data that may not sync:**
+    - Pending transactions
+    - Some alternative investments
+    - Certain restricted account types (like some 529s)
+    - Holdings in foreign currencies
+  </Accordion>
+  
+  <Accordion title="'Connection expired' or 'Please reconnect'" icon="clock">
+    **Why this happens:**
+    
+    Connections can expire when:
+    - You change your brokerage password
+    - Your brokerage updates their security systems
+    - It's been a long time since initial authentication
+    - Your brokerage requires periodic re-verification
+    
+    **To fix:**
+    
+    1. Go to your Tendrill dashboard
+    2. Find the affected account
+    3. Click "Reconnect" or "Refresh connection"
+    4. Log in again with your current credentials
+  </Accordion>
+  
+  <Accordion title="'Institution temporarily unavailable'" icon="building-columns">
+    **This means the brokerage is experiencing issues:**
+    
+    - **Wait and retry** — Most outages resolve within a few hours
+    - **Check your brokerage directly** — They may have posted about scheduled maintenance
+    - **Try during off-peak hours** — Early morning or late evening often work better
+    
+    <Note>
+    Plaid maintains connections with thousands of institutions. Occasional temporary outages are normal and usually brief.
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+## Error message reference
+
+| Error Message | What It Means | Quick Fix |
+|---------------|--------------|-----------|
+| `INVALID_CREDENTIALS` | Wrong username/password | Verify credentials at brokerage site first |
+| `MFA_NOT_SUPPORTED` | 2FA method not compatible | Try a different 2FA method if available |
+| `INSTITUTION_DOWN` | Brokerage temporarily unavailable | Wait a few hours and retry |
+| `ITEM_LOGIN_REQUIRED` | Need to re-authenticate | Reconnect the account |
+| `ACCOUNT_LOCKED` | Too many failed attempts | Wait 24 hours or contact brokerage |
+| `USER_SETUP_REQUIRED` | Account needs setup at brokerage | Log in to brokerage and complete setup |
+
+## Step-by-step: reconnecting an account
+
+If you need to reconnect a problematic account:
+
+<Steps>
+  <Step title="Open your Tendrill dashboard">
+    Go to [tendrill.ai](https://tendrill.ai) and log in
+  </Step>
+  <Step title="Find the disconnected account">
+    Look for accounts with a warning icon or "reconnection required" status
+  </Step>
+  <Step title="Click 'Reconnect'">
+    This will open the Plaid connection flow
+  </Step>
+  <Step title="Re-enter your credentials">
+    Log in with your current brokerage username and password
+  </Step>
+  <Step title="Complete verification">
+    Finish any 2FA or security steps required
+  </Step>
+  <Step title="Verify the connection">
+    Text "How's my portfolio?" to confirm data is syncing
+  </Step>
+</Steps>
+
+## When to contact support
+
+Reach out to our team if:
+
+- You've tried the solutions above and are still stuck
+- You're seeing an error message not listed here
+- Your data has been missing for more than 48 hours
+- You believe there's a security concern with your connection
+
+<Card title="Contact Support" icon="headset" href="/reference/support">
+  Get personalized help from our team
+</Card>
+
+## Brokerage-specific tips
+
+<AccordionGroup>
+  <Accordion title="Fidelity">
+    - Use your **Fidelity.com** credentials (not NetBenefits if separate)
+    - If using Symantec VIP, have your app ready for the 2FA code
+    - Multiple account types (IRA, brokerage, etc.) can be connected at once
+  </Accordion>
+  
+  <Accordion title="Charles Schwab / TD Ameritrade">
+    - Former TD Ameritrade users: Your account may now appear under Schwab
+    - Ensure you've completed any post-merger account migration
+    - Text-based 2FA is the most reliable option
+  </Accordion>
+  
+  <Accordion title="Robinhood">
+    - Make sure email-based 2FA is enabled (easier than app-based for connections)
+    - Crypto holdings may not sync (stock positions will)
+    - Instant deposits may show as pending briefly
+  </Accordion>
+  
+  <Accordion title="Vanguard">
+    - Use your **Vanguard.com** credentials
+    - If you have both personal and employer accounts, you may need to connect separately
+    - Security image verification may be required
+  </Accordion>
+  
+  <Accordion title="E*TRADE / Morgan Stanley">
+    - Recent Morgan Stanley integration may require updated login
+    - If you have both E*TRADE and Morgan Stanley accounts, connect each separately
+  </Accordion>
+</AccordionGroup>
+
+## Still stuck?
+
+<CardGroup cols={2}>
+  <Card title="Email Support" icon="envelope" href="mailto:support@tendrill.ai">
+    support@tendrill.ai — We typically respond within 24 hours
+  </Card>
+  <Card title="Check Plaid Status" icon="signal" href="https://status.plaid.com">
+    See if there are any known issues with your institution
+  </Card>
+</CardGroup>
+

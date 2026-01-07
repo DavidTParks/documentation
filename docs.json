@@ -1,68 +1,91 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "maple",
+  "name": "Tendrill",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#888f78",
+    "light": "#888f78",
+    "dark": "#888f78"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "getting-started/what-is-tendrill",
+              "getting-started/how-it-works",
+              "getting-started/quickstart",
+              "getting-started/supported-brokerages"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Connecting Your Accounts",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "connecting-accounts/linking-via-plaid",
+              "connecting-accounts/troubleshooting",
+              "connecting-accounts/managing-accounts",
+              "connecting-accounts/data-sync"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Core Features",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "features/proactive-alerts",
+              "features/conversational-ai",
+              "features/smart-alerts",
+              "features/recurring-tasks"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Investor Profiles",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "investor-profiles/passive-investors",
+              "investor-profiles/busy-investors",
+              "investor-profiles/stock-pickers",
+              "investor-profiles/novice-investors",
+              "investor-profiles/wealth-managers"
+            ]
+          },
+          {
+            "group": "Understanding Your Insights",
+            "pages": [
+              "insights/portfolio-impact",
+              "insights/allocation-analysis",
+              "insights/news-context",
+              "insights/data-timing"
+            ]
+          },
+          {
+            "group": "Privacy & Security",
+            "pages": [
+              "privacy-security/data-protection",
+              "privacy-security/zero-retention",
+              "privacy-security/disconnecting",
+              "privacy-security/never-does"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Help",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "FAQ & Support",
             "pages": [
-              "api-reference/introduction"
+              "faq",
+              "reference/support"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Reference",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "reference/glossary",
+              "reference/example-conversations"
             ]
           }
         ]
@@ -71,52 +94,46 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Get Started",
+          "href": "https://tendrill.ai",
+          "icon": "rocket"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Contact Us",
+          "href": "mailto:david@tendrill.ai",
+          "icon": "envelope"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/logo-light.svg",
+    "dark": "/logo/logo-dark.svg"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:david@tendrill.ai"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Started",
+      "href": "https://tendrill.ai"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/tendrill",
+      "discord": "https://discord.gg/tendrill"
     }
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "modeToggle": {
+    "default": "dark"
   }
 }

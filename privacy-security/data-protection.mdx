@@ -1,0 +1,220 @@
+---
+title: "How Your Data is Protected"
+description: "Bank-level security through Plaid integration and encryption"
+icon: "shield-check"
+---
+
+## Your security is our priority
+
+We understand that connecting your brokerage accounts requires trust. Tendrill is built from the ground up with security and privacy as core principles. Here's how we protect your financial data.
+
+<Info>
+**Bank-level security.** Tendrill uses the same security infrastructure trusted by Venmo, Coinbase, and thousands of financial applications.
+</Info>
+
+## Plaid: The foundation of secure connections
+
+Tendrill uses Plaid to connect to your brokerage accounts. Plaid is the industry standard for secure financial data connections.
+
+### What is Plaid?
+
+Plaid is a financial technology company that securely connects your bank and brokerage accounts to apps. They've been trusted with:
+
+- **Over 100 million** consumer accounts connected
+- **12,000+** financial institutions supported
+- **8,000+** apps and services powered
+
+<CardGroup cols={2}>
+  <Card title="SOC 2 Type II Certified" icon="certificate">
+    Regular third-party audits verify security controls
+  </Card>
+  <Card title="256-bit Encryption" icon="lock">
+    All data encrypted in transit and at rest
+  </Card>
+  <Card title="Bank-grade Infrastructure" icon="building-columns">
+    Same security standards as major financial institutions
+  </Card>
+  <Card title="Regulatory Compliance" icon="scale-balanced">
+    GDPR, CCPA, and financial privacy compliant
+  </Card>
+</CardGroup>
+
+## How the security works
+
+### Credential protection
+
+When you connect your brokerage:
+
+<Steps>
+  <Step title="You authenticate directly with your brokerage">
+    You enter your credentials into Plaid's secure interface — not Tendrill
+  </Step>
+  <Step title="Plaid verifies and establishes connection">
+    Plaid communicates directly with your brokerage using encrypted channels
+  </Step>
+  <Step title="Tendrill receives only portfolio data">
+    We get your holdings and balances — never your username, password, or account numbers
+  </Step>
+</Steps>
+
+<Frame caption="Data flow security">
+```
+┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+│    You       │     │    Plaid     │     │  Tendrill    │
+└──────────────┘     └──────────────┘     └──────────────┘
+       │                    │                    │
+       │  Username/Password │                    │
+       │ ──────────────────▶│                    │
+       │   (encrypted)      │                    │
+       │                    │                    │
+       │                    │  Holdings only     │
+       │                    │ ──────────────────▶│
+       │                    │  (no credentials)  │
+       │                    │                    │
+       
+✓ Tendrill NEVER sees your login credentials
+✓ All data encrypted in transit (TLS 1.2+)
+✓ All data encrypted at rest (AES-256)
+```
+</Frame>
+
+### Read-only access
+
+Tendrill has **read-only** access to your accounts. This means:
+
+| We CAN | We CANNOT |
+|--------|-----------|
+| ✅ See your holdings and positions | ❌ Execute trades |
+| ✅ See your account balances | ❌ Transfer money |
+| ✅ See your transaction history | ❌ Change account settings |
+| ✅ See cost basis (when available) | ❌ Access other accounts |
+
+<Warning>
+**No trade execution capability.** Even if someone compromised Tendrill (which is extremely unlikely given our security), they could not move money or make trades. The connection is technically read-only.
+</Warning>
+
+## Data encryption
+
+### In transit
+
+All data moving between systems is encrypted:
+
+- **TLS 1.2+** encryption for all connections
+- **Certificate pinning** to prevent man-in-the-middle attacks
+- **Secure WebSocket** connections for real-time data
+
+### At rest
+
+All stored data is encrypted:
+
+- **AES-256** encryption (military grade)
+- **Key management** through secure cloud providers
+- **Regular rotation** of encryption keys
+
+## Infrastructure security
+
+Tendrill's infrastructure follows industry best practices:
+
+<AccordionGroup>
+  <Accordion title="Cloud security" icon="cloud">
+    - Hosted on major cloud providers (AWS/GCP) with enterprise security
+    - SOC 2 compliant infrastructure
+    - Regular security audits and penetration testing
+    - DDoS protection and WAF (Web Application Firewall)
+  </Accordion>
+  
+  <Accordion title="Access controls" icon="user-lock">
+    - Strict role-based access for employees
+    - Multi-factor authentication required internally
+    - Activity logging and monitoring
+    - Principle of least privilege
+  </Accordion>
+  
+  <Accordion title="Monitoring" icon="eye">
+    - 24/7 security monitoring
+    - Automated threat detection
+    - Incident response procedures
+    - Regular security updates
+  </Accordion>
+</AccordionGroup>
+
+## What data we store
+
+Tendrill stores the minimum data necessary to provide the service:
+
+| Data | Stored? | Purpose |
+|------|---------|---------|
+| Phone number | Yes | Your account identity and message delivery |
+| Holdings data | Yes | Portfolio monitoring and insights |
+| Conversation history | Yes | Context for follow-up questions |
+| Brokerage credentials | **No** | Never stored — handled only by Plaid |
+| Account numbers | **No** | Not needed for our service |
+| Social Security Number | **No** | Never requested or accessed |
+
+## Your rights and controls
+
+You're always in control of your data:
+
+<CardGroup cols={2}>
+  <Card title="Disconnect anytime" icon="link-slash" href="/privacy-security/disconnecting">
+    Remove brokerage connections instantly
+  </Card>
+  <Card title="Delete your data" icon="trash" href="/privacy-security/disconnecting">
+    Request complete data deletion
+  </Card>
+  <Card title="View connected apps" icon="list" href="https://my.plaid.com">
+    See all apps using your data via Plaid
+  </Card>
+  <Card title="Export your data" icon="download">
+    Request a copy of your data
+  </Card>
+</CardGroup>
+
+## Third-party security validation
+
+Our security practices are validated by:
+
+- **Plaid's security requirements** — We must meet their standards to use their service
+- **Cloud provider certifications** — AWS/GCP security certifications
+- **Regular penetration testing** — Third-party security assessments
+- **Bug bounty program** — Security researchers help identify vulnerabilities
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Has Tendrill ever been hacked?">
+    No. We have never experienced a security breach. We maintain rigorous security practices and continuously invest in protecting your data.
+  </Accordion>
+  
+  <Accordion title="Is my data sold to third parties?">
+    Absolutely not. We never sell, share, or monetize your financial data. See our [Zero Data Retention Policy](/privacy-security/zero-retention).
+  </Accordion>
+  
+  <Accordion title="What if Plaid is compromised?">
+    Plaid has never experienced a breach of user data. They employ industry-leading security practices and are regularly audited. In the unlikely event of any security incident, we would notify affected users immediately.
+  </Accordion>
+  
+  <Accordion title="Can Tendrill employees see my portfolio?">
+    Access to user data is strictly limited. Only essential personnel have access for support purposes, and all access is logged and audited.
+  </Accordion>
+</AccordionGroup>
+
+## Reporting security concerns
+
+If you discover a potential security vulnerability:
+
+<Card title="Report a security issue" icon="bug" href="mailto:security@tendrill.ai">
+  Contact security@tendrill.ai — we take all reports seriously
+</Card>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Zero Retention Policy" icon="eraser" href="/privacy-security/zero-retention">
+    Learn about our data retention approach
+  </Card>
+  <Card title="Disconnecting Data" icon="link-slash" href="/privacy-security/disconnecting">
+    How to remove your data
+  </Card>
+</CardGroup>
+

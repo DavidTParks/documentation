@@ -1,0 +1,272 @@
+---
+title: "Disconnecting & Deleting Data"
+description: "How to remove your accounts and delete your data"
+icon: "trash"
+---
+
+## You're always in control
+
+Whether you want to disconnect one account, remove all connections, or delete your entire Tendrill account, the process is straightforward. Here's how to manage your data.
+
+## Options available
+
+| Action | What It Does | Your Data |
+|--------|--------------|-----------|
+| **Disconnect one account** | Removes one brokerage | That account's data deleted |
+| **Disconnect all accounts** | Removes all brokerages | All portfolio data deleted |
+| **Delete Tendrill account** | Removes everything | Complete data deletion |
+
+## Disconnecting a single account
+
+If you want to remove one brokerage but keep using Tendrill:
+
+### Via dashboard
+
+<Steps>
+  <Step title="Go to tendrill.ai and log in">
+    Navigate to your account settings
+  </Step>
+  <Step title="Find Connected Accounts">
+    Click on the account you want to remove
+  </Step>
+  <Step title="Click 'Disconnect'">
+    Confirm when prompted
+  </Step>
+</Steps>
+
+### Via text
+
+```
+You: Disconnect my Fidelity account
+
+Tendrill: Are you sure you want to disconnect your Fidelity 
+account? I'll stop monitoring those holdings.
+
+Type "yes" to confirm.
+
+You: yes
+
+Tendrill: ✅ Fidelity account disconnected.
+
+• Holdings from that account: Removed
+• Alerts for those positions: Cancelled
+• Your other accounts: Still connected
+
+You can reconnect anytime.
+```
+
+### What happens next
+
+- **Immediately**: Tendrill loses access to that account
+- **Within 24 hours**: All data from that account is deleted
+- **Alerts**: Any alerts for stocks only in that account are cancelled
+- **Other accounts**: Unaffected
+
+## Disconnecting all accounts
+
+To remove all brokerage connections while keeping your Tendrill account:
+
+```
+You: Disconnect all my accounts
+
+Tendrill: This will disconnect all 3 of your brokerage 
+accounts:
+• Fidelity Individual
+• Vanguard IRA
+• Robinhood
+
+I'll stop monitoring your portfolio and delete all 
+holdings data. Your Tendrill account will remain 
+active for future use.
+
+Type "disconnect all" to confirm.
+
+You: disconnect all
+
+Tendrill: ✅ All accounts disconnected.
+
+• All holdings data: Deleted
+• All alerts: Cancelled
+• Your account: Still active
+
+You can reconnect accounts anytime by texting 
+"connect account" or visiting tendrill.ai.
+```
+
+## Deleting your Tendrill account
+
+For complete account deletion:
+
+### Via text
+
+```
+You: Delete my account
+
+Tendrill: ⚠️ Account deletion request
+
+This will permanently delete:
+• Your Tendrill account
+• All connected brokerage accounts
+• All conversation history
+• All preferences and alerts
+
+This cannot be undone.
+
+To confirm, type "delete my account permanently"
+
+You: delete my account permanently
+
+Tendrill: ✅ Account deletion initiated.
+
+• All connections: Terminated
+• All data: Queued for deletion
+• Timeline: Completed within 24 hours
+
+Thank you for trying Tendrill. If you ever want to 
+return, you're always welcome. 👋
+```
+
+### Via email
+
+Email delete@tendrill.ai with:
+- Subject: "Account Deletion Request"
+- Body: Your phone number and confirmation
+
+We'll process within 24 hours and confirm via email.
+
+## What gets deleted
+
+### Immediately upon disconnection
+
+- Access to your brokerage account(s)
+- Real-time monitoring stops
+- No new data collected
+
+### Within 24 hours
+
+- Holdings and positions data
+- Account balances
+- Transaction history
+- Active alerts for removed positions
+
+### Within 30 days
+
+- Backup copies are purged
+- Audit logs (anonymized) may remain for security
+
+### Preserved unless you request deletion
+
+- Conversation history (can be deleted separately)
+- Anonymized usage statistics
+
+## Deleting conversation history only
+
+If you want to keep your accounts connected but clear your chat history:
+
+```
+You: Delete my conversation history
+
+Tendrill: This will delete all our previous conversations.
+I won't remember past questions or context.
+
+Your connected accounts and alerts will stay active.
+
+Type "clear history" to confirm.
+
+You: clear history
+
+Tendrill: ✅ Conversation history cleared.
+
+I've forgotten our previous chats. Your portfolio 
+monitoring continues as normal. How can I help?
+```
+
+## Managing via Plaid
+
+You can also manage connections through Plaid's consumer portal:
+
+<Steps>
+  <Step title="Visit my.plaid.com">
+    This is Plaid's official consumer portal
+  </Step>
+  <Step title="Log in with your information">
+    Verify your identity
+  </Step>
+  <Step title="Find Tendrill in your connected apps">
+    You'll see all apps using Plaid with your accounts
+  </Step>
+  <Step title="Revoke access">
+    Click to disconnect Tendrill's access
+  </Step>
+</Steps>
+
+<Card title="Plaid Consumer Portal" icon="external-link" href="https://my.plaid.com">
+  Manage all your financial app connections in one place
+</Card>
+
+## After deletion
+
+### What you'll experience
+
+- No more texts from Tendrill
+- Cannot log in to dashboard
+- No access to historical insights
+
+### If you want to return
+
+- Sign up fresh with your phone number
+- Reconnect your accounts
+- Start building history again
+
+We don't penalize returning users — you're always welcome back!
+
+## Data deletion verification
+
+Want proof your data was deleted?
+
+```
+You: Confirm my data was deleted
+
+Tendrill: I don't have any records associated with 
+this phone number. If you previously had an account,
+it has been fully deleted.
+
+Would you like to create a new account?
+```
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How long does deletion take?">
+    - Active data: Within 24 hours
+    - Backup copies: Within 30 days
+    - You'll receive confirmation when complete
+  </Accordion>
+  
+  <Accordion title="Can I get my data back after deletion?">
+    No. Deletion is permanent and cannot be undone. Make sure you really want to delete before confirming.
+  </Accordion>
+  
+  <Accordion title="Will my brokerage know I disconnected?">
+    No. Disconnecting from Tendrill doesn't affect your brokerage account in any way. The connection was read-only and one-directional.
+  </Accordion>
+  
+  <Accordion title="What if I just want to pause?">
+    Instead of deleting, you can:
+    - Text "pause alerts" to stop notifications temporarily
+    - Disconnect accounts but keep your Tendrill account
+    - Resume anytime without losing settings
+  </Accordion>
+</AccordionGroup>
+
+## Need help?
+
+<CardGroup cols={2}>
+  <Card title="Contact Support" icon="headset" href="mailto:support@tendrill.ai">
+    Get help with deletion requests
+  </Card>
+  <Card title="Privacy Questions" icon="lock" href="mailto:privacy@tendrill.ai">
+    Questions about your data
+  </Card>
+</CardGroup>
+

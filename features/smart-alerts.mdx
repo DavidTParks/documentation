@@ -1,0 +1,327 @@
+---
+title: "Smart Alerts"
+description: "Set up custom notifications for price movements, news, and events"
+icon: "bell-ring"
+---
+
+## Alerts tailored to you
+
+While Tendrill automatically monitors your portfolio, you can also set up custom alerts for specific conditions you care about. Whether it's a price target, news about a particular stock, or a regular check-in, Smart Alerts keep you informed on your terms.
+
+<Info>
+**Set it and forget it.** Create an alert once, and Tendrill will monitor 24/7 until your condition is met.
+</Info>
+
+## Types of alerts you can set
+
+<CardGroup cols={2}>
+  <Card title="Price alerts" icon="chart-line">
+    Get notified when a stock hits a specific price
+  </Card>
+  <Card title="Percentage change alerts" icon="percent">
+    Know when a stock moves by a certain percentage
+  </Card>
+  <Card title="News alerts" icon="newspaper">
+    Hear about breaking news for specific companies
+  </Card>
+  <Card title="Event alerts" icon="calendar">
+    Never miss earnings, dividends, or other events
+  </Card>
+</CardGroup>
+
+## Setting up price alerts
+
+### Basic price alert
+
+Simply tell Tendrill the condition you want to monitor:
+
+```
+You: Alert me if Apple drops below $170
+
+Tendrill: ✅ Alert set!
+
+I'll text you when AAPL falls below $170.
+Current price: $182.50 (7.4% above your alert)
+
+Your AAPL position: 80 shares
+At $170, your position would be worth $13,600
+(currently $14,600)
+```
+
+### Multiple price levels
+
+```
+You: Set alerts for NVDA at $800 and $950
+
+Tendrill: ✅ Two alerts set for NVDA:
+
+1. Alert if NVDA drops to $800 (currently $890)
+   • Trigger: 10.1% below current price
+   
+2. Alert if NVDA rises to $950 (currently $890)
+   • Trigger: 6.7% above current price
+
+I'll text you when either level is hit.
+Want to add any other price levels?
+```
+
+### Price alert examples
+
+| What You Say | What Happens |
+|--------------|--------------|
+| "Alert me if TSLA hits $300" | Notified when TSLA reaches $300 (up or down) |
+| "Tell me when AAPL drops below $170" | Notified only if AAPL falls below $170 |
+| "Let me know if MSFT goes above $400" | Notified only if MSFT rises above $400 |
+| "Ping me at GOOGL $180" | Notified when GOOGL reaches $180 |
+
+## Percentage change alerts
+
+### Daily movement alerts
+
+Get notified when a stock moves significantly in a single day:
+
+```
+You: Alert me if any of my stocks drop 5% in a day
+
+Tendrill: ✅ Portfolio-wide alert set!
+
+I'll text you if any of your 12 holdings drops 5% or 
+more in a single trading day.
+
+Based on historical volatility:
+• NVDA, TSLA: May trigger occasionally (volatile)
+• AAPL, MSFT: Rare (typically stable)
+• VOO: Very rare (diversified ETF)
+```
+
+### Stock-specific movement alerts
+
+```
+You: Alert me if Tesla moves 3% today
+
+Tendrill: ✅ Intraday alert set for TSLA!
+
+I'll text you if TSLA moves up or down by 3% or more 
+today. Currently at $248.50.
+
+• Alert triggers above: $255.96
+• Alert triggers below: $241.05
+
+This alert expires at market close (4:00 PM ET).
+```
+
+## News and event alerts
+
+### Company news alerts
+
+```
+You: Send me any news about Microsoft
+
+Tendrill: ✅ News monitoring enabled for MSFT!
+
+I'll text you when there's significant news about 
+Microsoft, including:
+• Earnings and financial updates
+• Product announcements
+• Analyst rating changes
+• Regulatory or legal news
+• Executive changes
+
+You'll only get material news — I filter out the noise.
+```
+
+### Earnings alerts
+
+```
+You: Remind me before NVDA earnings
+
+Tendrill: ✅ Earnings reminder set!
+
+NVDA reports on Nov 20th after market close.
+I'll send you:
+
+📅 3 days before: Preview with analyst expectations
+📊 Day of: Reminder with what to watch
+📈 After report: Results and your position impact
+
+Your NVDA position: 50 shares worth $44,500
+```
+
+### Dividend alerts
+
+```
+You: Alert me about upcoming dividends
+
+Tendrill: ✅ Dividend tracking enabled!
+
+I found 3 dividend-paying stocks in your portfolio:
+
+AAPL - Next ex-date: Nov 10
+• Expected dividend: $0.24/share
+• Your 80 shares = $19.20
+
+MSFT - Next ex-date: Nov 20  
+• Expected dividend: $0.75/share
+• Your 50 shares = $37.50
+
+JNJ - Next ex-date: Nov 25
+• Expected dividend: $1.24/share
+• Your 30 shares = $37.20
+
+I'll remind you a few days before each ex-date.
+Total expected quarterly dividends: $93.90
+```
+
+## Managing your alerts
+
+### View active alerts
+
+```
+You: What alerts do I have set?
+
+Tendrill: Here are your active alerts:
+
+Price Alerts:
+• AAPL below $170 ⏳ (current: $182.50)
+• NVDA at $800 ⏳ (current: $890)
+• NVDA at $950 ⏳ (current: $890)
+
+Movement Alerts:
+• Any holding drops 5% in a day
+
+News Alerts:
+• MSFT — all significant news
+
+Event Alerts:
+• NVDA earnings reminder (Nov 20)
+• Dividend reminders (3 stocks)
+
+Want to modify or cancel any of these?
+```
+
+### Cancel an alert
+
+```
+You: Cancel my Apple price alert
+
+Tendrill: ✅ Cancelled!
+
+Your alert for "AAPL below $170" has been removed.
+
+You still have 6 other active alerts.
+```
+
+### Modify an alert
+
+```
+You: Change my NVDA alert from $800 to $850
+
+Tendrill: ✅ Updated!
+
+Old alert: NVDA at $800 (cancelled)
+New alert: NVDA at $850 (4.5% below current)
+
+I'll text you when NVDA hits $850.
+```
+
+## Alert when triggered
+
+Here's what you'll receive when an alert fires:
+
+<Frame caption="Example triggered alert">
+```
+┌─────────────────────────────────────────────┐
+│ 💬 Tendrill                       Tue 2:30 PM │
+├─────────────────────────────────────────────┤
+│ 🎯 Your AAPL alert just triggered!         │
+│                                             │
+│ Apple dropped below $170                    │
+│ Current price: $168.45                      │
+│                                             │
+│ Your position:                              │
+│ • 80 shares worth $13,476                  │
+│ • Down from $14,600 when you set the alert │
+│ • Total change: -$1,124 (-7.7%)            │
+│                                             │
+│ What's happening:                           │
+│ Broader market selloff on Fed rate concerns.│
+│ AAPL down more than peers today.           │
+│                                             │
+│ Reply "keep watching" to set a new alert,  │
+│ or "why" for more analysis.                │
+└─────────────────────────────────────────────┘
+```
+</Frame>
+
+## Smart alert suggestions
+
+Tendrill may proactively suggest alerts based on your portfolio:
+
+<Frame>
+```
+┌─────────────────────────────────────────────┐
+│ 💬 Tendrill                       Thu 9:15 AM │
+├─────────────────────────────────────────────┤
+│ 💡 Alert suggestion                         │
+│                                             │
+│ Your NVDA position is up 85% and is now    │
+│ 34% of your portfolio.                      │
+│                                             │
+│ Want me to alert you if NVDA drops 10%     │
+│ from here? That would protect against      │
+│ giving back $4,450 of your gains.          │
+│                                             │
+│ Reply "yes" to set this alert, or "no      │
+│ thanks" to dismiss.                         │
+└─────────────────────────────────────────────┘
+```
+</Frame>
+
+## Best practices
+
+<CardGroup cols={2}>
+  <Card title="Set meaningful levels" icon="bullseye">
+    Choose price points that would actually prompt you to act, not arbitrary numbers
+  </Card>
+  <Card title="Don't over-alert" icon="volume-xmark">
+    Too many alerts leads to alert fatigue. Focus on what truly matters
+  </Card>
+  <Card title="Use percentage alerts for volatile stocks" icon="percent">
+    Exact prices matter less for stocks that swing 5% daily
+  </Card>
+  <Card title="Combine with research" icon="magnifying-glass">
+    Set alerts, but also ask Tendrill for context when they trigger
+  </Card>
+</CardGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do alerts work after hours?">
+    Price alerts only trigger during regular market hours (9:30 AM - 4:00 PM ET). News alerts work 24/7.
+  </Accordion>
+  
+  <Accordion title="What happens if the market gaps past my alert level?">
+    You'll still get notified. If you set an alert at $170 and the stock opens at $165, you'll get an alert when the market opens.
+  </Accordion>
+  
+  <Accordion title="Is there a limit to how many alerts I can set?">
+    Free tier: 5 active alerts. Premium: Unlimited alerts.
+  </Accordion>
+  
+  <Accordion title="Do alerts expire?">
+    Price and news alerts stay active until triggered or cancelled. Intraday movement alerts expire at market close.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Recurring Tasks" icon="clock" href="/features/recurring-tasks">
+    Schedule regular updates and reports
+  </Card>
+  <Card title="Proactive Alerts" icon="bell" href="/features/proactive-alerts">
+    Learn about automatic portfolio monitoring
+  </Card>
+</CardGroup>
+

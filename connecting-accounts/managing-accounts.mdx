@@ -1,0 +1,227 @@
+---
+title: "Managing Connected Accounts"
+description: "Add, refresh, or remove your linked brokerage accounts"
+icon: "sliders"
+---
+
+## Full control over your connections
+
+You're always in control of which accounts Tendrill can access. Add new brokerages, refresh stale connections, or remove accounts entirely — all from your dashboard or via text.
+
+## Adding a new account
+
+Connect additional brokerages to get a complete picture of your investments.
+
+<Steps>
+  <Step title="Open your Tendrill dashboard">
+    Visit [tendrill.ai](https://tendrill.ai) and log in
+  </Step>
+  <Step title="Click '+ Add Account'">
+    Find the button in your connected accounts section
+  </Step>
+  <Step title="Search for your brokerage">
+    Use Plaid to find and connect your institution
+  </Step>
+  <Step title="Complete the connection">
+    Follow the authentication steps for your brokerage
+  </Step>
+</Steps>
+
+<Tip>
+**Or just text:** Message Tendrill "connect another account" and we'll send you a secure link to add a new brokerage.
+</Tip>
+
+### Why connect multiple accounts?
+
+<CardGroup cols={2}>
+  <Card title="Complete portfolio view" icon="chart-pie">
+    See all your investments in one place, regardless of where they're held
+  </Card>
+  <Card title="Better insights" icon="lightbulb">
+    Tendrill can analyze your overall allocation and diversification
+  </Card>
+  <Card title="Unified alerts" icon="bell">
+    Get notified about any holding, no matter which account it's in
+  </Card>
+  <Card title="Accurate performance" icon="chart-line">
+    Track your total investment performance across all accounts
+  </Card>
+</CardGroup>
+
+## Refreshing account data
+
+Your portfolio data syncs automatically, but sometimes you may want to trigger a manual refresh.
+
+### Automatic sync schedule
+
+| Data Type | Refresh Frequency |
+|-----------|------------------|
+| Holdings & positions | Daily (overnight) |
+| Account balances | Daily |
+| Transactions | Daily |
+| Cost basis updates | Within 24-48 hours of trades |
+
+### Manual refresh options
+
+**Via text:**
+```
+You: Refresh my portfolio
+
+Tendrill: Refreshing your portfolio data now... 🔄
+
+Done! I've updated your holdings from all connected accounts.
+Your current portfolio value: $127,450 (+$890 today)
+```
+
+**Via dashboard:**
+1. Go to your connected accounts
+2. Click the refresh icon (🔄) next to any account
+3. Wait for the sync to complete (usually under 1 minute)
+
+<Note>
+Some brokerages have rate limits on how often data can be refreshed. If you've recently triggered a refresh, you may need to wait before requesting another.
+</Note>
+
+## Removing an account
+
+You can disconnect any account at any time. This immediately revokes Tendrill's access to that account's data.
+
+<Steps>
+  <Step title="Go to your dashboard">
+    Visit [tendrill.ai](https://tendrill.ai)
+  </Step>
+  <Step title="Find the account to remove">
+    Locate it in your connected accounts list
+  </Step>
+  <Step title="Click 'Disconnect' or 'Remove'">
+    Confirm when prompted
+  </Step>
+  <Step title="Verify removal">
+    The account will disappear from your portfolio view
+  </Step>
+</Steps>
+
+### What happens when you disconnect
+
+- **Immediately**: Tendrill loses access to that account's data
+- **Within 24 hours**: Historical data for that account is purged from our systems
+- **Alerts stop**: You won't receive notifications for holdings in the removed account
+- **Plaid access revoked**: The connection is terminated at the Plaid level
+
+<Warning>
+**This action is reversible** — you can always reconnect the same account later. But you'll need to go through the authentication process again.
+</Warning>
+
+### Alternative: Revoke via Plaid
+
+You can also manage connections through Plaid's consumer portal:
+
+1. Visit [my.plaid.com](https://my.plaid.com)
+2. Find Tendrill in your connected apps
+3. Click to revoke access
+
+This provides an additional layer of control and lets you see all apps using Plaid with your accounts.
+
+## Reconnecting expired accounts
+
+Connections can expire for several reasons. When this happens, you'll see a notification in your dashboard and receive a text.
+
+<Frame>
+```
+┌─────────────────────────────────────────────┐
+│ 💬 Tendrill                       Today 8:30 AM │
+├─────────────────────────────────────────────┤
+│ Heads up: Your Fidelity connection needs    │
+│ attention. 🔗                               │
+│                                             │
+│ This can happen when passwords change or   │
+│ your brokerage updates their security.     │
+│                                             │
+│ Tap here to reconnect:                     │
+│ [tendrill.ai/reconnect/abc123]             │
+│                                             │
+│ I'll resume monitoring once you're         │
+│ reconnected!                               │
+└─────────────────────────────────────────────┘
+```
+</Frame>
+
+### Common reasons for expiration
+
+| Reason | How to Fix |
+|--------|-----------|
+| Password changed at brokerage | Reconnect with new password |
+| Brokerage security update | Re-authenticate through Plaid |
+| 90-day re-verification requirement | Log in again to confirm access |
+| Failed refresh attempts | Reconnect and verify credentials |
+
+## Viewing account status
+
+Your dashboard shows the status of each connected account:
+
+| Status | Meaning |
+|--------|---------|
+| 🟢 **Connected** | Active and syncing normally |
+| 🟡 **Syncing** | Data refresh in progress |
+| 🔴 **Needs attention** | Reconnection required |
+| ⚪ **Recently added** | Initial data sync in progress |
+
+## Managing account nicknames
+
+Give your accounts friendly names to keep track of them easily:
+
+<Frame>
+```
+┌─────────────────────────────────────────────┐
+│        Your Connected Accounts             │
+├─────────────────────────────────────────────┤
+│ 🟢 "Main Trading" (Fidelity)               │
+│    $127,450 • Last synced: 2 hours ago     │
+│    [Rename] [Refresh] [Disconnect]         │
+├─────────────────────────────────────────────┤
+│ 🟢 "Retirement" (Vanguard)                 │
+│    $245,000 • Last synced: 3 hours ago     │
+│    [Rename] [Refresh] [Disconnect]         │
+├─────────────────────────────────────────────┤
+│ 🟢 "Fun Money" (Robinhood)                 │
+│    $8,500 • Last synced: 1 hour ago        │
+│    [Rename] [Refresh] [Disconnect]         │
+├─────────────────────────────────────────────┤
+│                                             │
+│           [ + Add Account ]                │
+│                                             │
+└─────────────────────────────────────────────┘
+```
+</Frame>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How many accounts can I connect?">
+    There's no hard limit. Connect as many brokerages and accounts as you need to get a complete view of your investments.
+  </Accordion>
+  
+  <Accordion title="Will removing an account delete my conversation history?">
+    No. Your conversation history with Tendrill is preserved. Only the portfolio data from that specific account is removed.
+  </Accordion>
+  
+  <Accordion title="Can I connect the same brokerage twice?">
+    If you have multiple logins at the same brokerage (for example, personal and business accounts), you can connect each separately.
+  </Accordion>
+  
+  <Accordion title="What if I close an account at my brokerage?">
+    The connection will eventually fail during a sync attempt. You can proactively remove it from Tendrill before that happens.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Data Sync Details" icon="rotate" href="/connecting-accounts/data-sync">
+    Learn about refresh frequencies and data freshness
+  </Card>
+  <Card title="Privacy & Security" icon="shield-check" href="/privacy-security/data-protection">
+    Understand how your data is protected
+  </Card>
+</CardGroup>
+

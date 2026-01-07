@@ -1,0 +1,195 @@
+---
+title: "Supported Brokerages"
+description: "Tendrill connects to 10,000+ financial institutions through Plaid"
+icon: "building-columns"
+---
+
+## Connect almost any brokerage
+
+Tendrill uses Plaid to securely connect to your investment accounts. Plaid supports over **10,000 financial institutions** across the United States, including all major brokerages, banks with investment services, and retirement account providers.
+
+<Info>
+If your institution offers online account access, there's a good chance it works with Tendrill. Search for your brokerage during the connection process to confirm.
+</Info>
+
+## Popular brokerages
+
+These are some of the most commonly connected institutions:
+
+### Full-service brokerages
+
+| Brokerage | Connection Status | Notes |
+|-----------|------------------|-------|
+| **Fidelity** | ✅ Fully supported | Individual, retirement, and brokerage accounts |
+| **Charles Schwab** | ✅ Fully supported | Includes former TD Ameritrade accounts |
+| **Vanguard** | ✅ Fully supported | Brokerage and retirement accounts |
+| **E*TRADE** | ✅ Fully supported | Now part of Morgan Stanley |
+| **Merrill Lynch** | ✅ Fully supported | Bank of America investment accounts |
+
+### Discount & online brokerages
+
+| Brokerage | Connection Status | Notes |
+|-----------|------------------|-------|
+| **Robinhood** | ✅ Fully supported | Stocks, ETFs, and options positions |
+| **Webull** | ✅ Fully supported | Including margin accounts |
+| **M1 Finance** | ✅ Fully supported | Pie-based portfolio tracking |
+| **SoFi Invest** | ✅ Fully supported | Active and automated accounts |
+| **Public** | ✅ Fully supported | Stocks and alternative investments |
+| **Firstrade** | ✅ Fully supported | Full account access |
+
+### Banks with investment services
+
+| Institution | Connection Status | Notes |
+|-------------|------------------|-------|
+| **Chase (J.P. Morgan)** | ✅ Fully supported | Self-directed and managed accounts |
+| **Wells Fargo Advisors** | ✅ Fully supported | WellsTrade and advisory accounts |
+| **Citi Personal Wealth** | ✅ Fully supported | Investment accounts |
+| **Capital One Investing** | ✅ Fully supported | ShareBuilder accounts |
+| **Ally Invest** | ✅ Fully supported | Self-directed accounts |
+
+### Retirement-focused providers
+
+| Provider | Connection Status | Notes |
+|----------|------------------|-------|
+| **TIAA** | ✅ Fully supported | Education and retirement accounts |
+| **Principal** | ✅ Fully supported | 401(k) and retirement accounts |
+| **Empower** | ✅ Fully supported | Formerly Personal Capital |
+| **Betterment** | ✅ Fully supported | Robo-advisor accounts |
+| **Wealthfront** | ✅ Fully supported | Automated investment accounts |
+
+## International & specialized brokerages
+
+| Brokerage | Connection Status | Notes |
+|-----------|------------------|-------|
+| **Interactive Brokers** | ✅ Fully supported | Domestic accounts |
+| **Tastytrade** | ✅ Fully supported | Options-focused accounts |
+| **TradeStation** | ✅ Fully supported | Active trader accounts |
+| **Lightspeed** | ⚠️ Limited support | Contact support for details |
+
+## Account types supported
+
+Tendrill can connect to most investment account types:
+
+<CardGroup cols={2}>
+  <Card title="Individual brokerage" icon="user">
+    Standard taxable investment accounts
+  </Card>
+  <Card title="Joint accounts" icon="users">
+    Accounts held with a spouse or partner
+  </Card>
+  <Card title="Traditional IRA" icon="landmark">
+    Pre-tax retirement accounts
+  </Card>
+  <Card title="Roth IRA" icon="piggy-bank">
+    Post-tax retirement accounts
+  </Card>
+  <Card title="401(k) / 403(b)" icon="building">
+    Employer-sponsored retirement plans
+  </Card>
+  <Card title="SEP / SIMPLE IRA" icon="briefcase">
+    Self-employed retirement accounts
+  </Card>
+  <Card title="Trust accounts" icon="scroll">
+    Investment accounts held in trust
+  </Card>
+  <Card title="Custodial (UGMA/UTMA)" icon="baby">
+    Accounts for minors
+  </Card>
+</CardGroup>
+
+## Not supported
+
+Some account types have limitations:
+
+<Warning>
+**Currently not supported:**
+- Cryptocurrency-only exchanges (Coinbase, Kraken, etc.) — stock holdings are supported
+- Foreign brokerage accounts
+- Some employer stock plans (ESPPs, RSUs may show as "other holdings")
+- Annuity contracts
+- Life insurance investment accounts
+</Warning>
+
+## How to check your institution
+
+The easiest way to confirm your brokerage is supported:
+
+<Steps>
+  <Step title="Start the connection process">
+    Begin linking an account on [tendrill.ai](https://tendrill.ai)
+  </Step>
+  <Step title="Search for your institution">
+    Type your brokerage name in the search box
+  </Step>
+  <Step title="Select from results">
+    If your institution appears, it's supported. Click to connect.
+  </Step>
+</Steps>
+
+<Frame>
+```
+┌─────────────────────────────────────────────┐
+│        Search Your Institution             │
+│                                             │
+│  🔍 Search: "fidel"                        │
+│                                             │
+│  Results:                                   │
+│  ┌─────────────────────────────────────┐   │
+│  │ 🏦 Fidelity Investments             │   │
+│  │ 🏦 Fidelity NetBenefits (401k)      │   │
+│  │ 🏦 Fidelity Charitable              │   │
+│  └─────────────────────────────────────┘   │
+│                                             │
+│  Can't find your institution?              │
+│  [Contact Support]                          │
+│                                             │
+└─────────────────────────────────────────────┘
+```
+</Frame>
+
+## Connecting multiple accounts
+
+You can link accounts from multiple brokerages to get a complete view of your portfolio:
+
+<Info>
+**Aggregate everything.** Connect your Fidelity IRA, Robinhood trading account, and 401(k) — Tendrill will show you the big picture across all accounts.
+</Info>
+
+Benefits of connecting multiple accounts:
+- See total portfolio value and performance
+- Understand overall allocation and diversification
+- Get alerts for any holding, regardless of which account it's in
+- Compare performance across accounts
+
+## Troubleshooting connections
+
+<AccordionGroup>
+  <Accordion title="My brokerage doesn't appear in search">
+    - Try alternate names (e.g., "Schwab" vs "Charles Schwab")
+    - Check if your institution was recently acquired or renamed
+    - Some smaller credit unions may not be supported
+    - [Contact support](/reference/support) if you believe your institution should be available
+  </Accordion>
+  
+  <Accordion title="Connection failed after entering credentials">
+    - Verify your username and password are correct
+    - Check if your brokerage requires a security key or authenticator app
+    - Some institutions have temporary outages — try again later
+    - See our [connection troubleshooting guide](/connecting-accounts/troubleshooting)
+  </Accordion>
+  
+  <Accordion title="Some accounts didn't sync">
+    - Certain account types (like 529 plans) may not sync holdings
+    - Restricted accounts may show limited data
+    - Try disconnecting and reconnecting the institution
+  </Accordion>
+</AccordionGroup>
+
+## Request a new institution
+
+Don't see your brokerage? Let us know:
+
+<Card title="Request institution support" icon="plus" href="mailto:support@tendrill.ai?subject=Institution Request">
+  Email us with the name of your brokerage and we'll look into adding support.
+</Card>
+

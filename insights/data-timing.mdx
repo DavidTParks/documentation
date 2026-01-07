@@ -1,0 +1,244 @@
+---
+title: "Realtime vs. Historical Data"
+description: "Understanding what data Tendrill uses and when"
+icon: "clock"
+---
+
+## Data freshness explained
+
+Tendrill uses different data sources with different update frequencies. Understanding this helps you interpret the information you receive and know when to expect updates.
+
+## Data sources and timing
+
+| Data Type | Update Frequency | Source |
+|-----------|------------------|--------|
+| **Stock prices** | Real-time (during market hours) | Market data providers |
+| **Portfolio holdings** | Daily (overnight sync) | Plaid connection |
+| **News & events** | Continuous (24/7) | Multiple news sources |
+| **Earnings data** | As released | Company filings, news |
+| **Analyst ratings** | As released | Research providers |
+| **SEC filings** | As filed | SEC EDGAR |
+
+## Real-time data
+
+### Stock prices
+
+During market hours (9:30 AM - 4:00 PM ET), Tendrill uses real-time stock prices:
+
+- **Alerts**: Price movement alerts use live data
+- **Questions**: "What's AAPL trading at?" gives you the current price
+- **Impact calculations**: Your position value updates continuously
+
+<Info>
+**Extended hours:** Pre-market (4:00-9:30 AM) and after-hours (4:00-8:00 PM) pricing is available but may be less reliable due to lower volume.
+</Info>
+
+### News and events
+
+News monitoring runs 24/7:
+
+- Breaking news is processed within minutes
+- Earnings results are analyzed immediately after release
+- Overnight news is captured for morning briefings
+
+## Delayed/daily data
+
+### Portfolio holdings (via Plaid)
+
+Your holdings data syncs from your brokerage accounts daily:
+
+| Action | When It Appears in Tendrill |
+|--------|----------------------------|
+| You buy a stock at 10 AM | Next day after overnight sync |
+| You sell a stock | Next day after overnight sync |
+| Dividend is paid | 1-2 days after payment |
+| Stock split | Usually same-day or next day |
+
+<Note>
+**Manual refresh:** Text "refresh my portfolio" to trigger an on-demand sync. This may pull more recent data, but some brokerages still have delays.
+</Note>
+
+### Cost basis and transactions
+
+Transaction history and cost basis update daily:
+
+- Recent trades appear in your transaction list
+- Cost basis calculations update after trades settle (T+1 or T+2)
+- Dividend reinvestments show after processing
+
+## How this affects your experience
+
+### Scenario: You buy a stock
+
+```
+10:00 AM - You buy 10 shares of AAPL in your Robinhood app
+
+10:05 AM - You ask Tendrill "What do I own?"
+Tendrill shows your portfolio WITHOUT the new AAPL shares
+(The data hasn't synced yet)
+
+Next morning - Data syncs overnight
+Now Tendrill shows the AAPL shares and starts monitoring them
+```
+
+### Scenario: Intraday price alerts
+
+```
+9:30 AM - Market opens, NVDA at $890
+
+11:00 AM - NVDA drops to $845 (-5%)
+Tendrill immediately texts you: "NVDA down 5%..."
+
+The alert uses real-time price data, not the
+daily synced data.
+```
+
+### Scenario: Evening question
+
+```
+6:00 PM - You text "How did I do today?"
+
+Tendrill responds with:
+- Real-time closing prices (from 4 PM close)
+- Your share counts (from last overnight sync)
+- Calculated gains/losses (prices × shares)
+```
+
+## Data timing indicators
+
+Tendrill tells you when data might be stale:
+
+<Frame>
+```
+┌─────────────────────────────────────────────┐
+│ 📊 Your Portfolio                           │
+│                                             │
+│ Total: $131,200 (as of 4:00 PM ET)         │
+│ Holdings synced: Today 5:30 AM             │
+│                                             │
+│ Note: Any trades made today will appear    │
+│ after tonight's sync.                       │
+└─────────────────────────────────────────────┘
+```
+</Frame>
+
+## Why isn't everything real-time?
+
+### Brokerage limitations
+
+Brokerages don't provide instant APIs for all data:
+
+- Most brokerages update Plaid connections daily, not continuously
+- Some data (cost basis, transactions) has processing delays
+- This is an industry-wide limitation, not specific to Tendrill
+
+### What we optimize
+
+Given these constraints, Tendrill prioritizes:
+
+1. **Real-time prices** — What matters most for alerts
+2. **Fast news** — Breaking information that affects decisions
+3. **Accurate holdings** — Daily sync ensures completeness
+
+## Interpreting data in alerts
+
+When you see portfolio impact numbers:
+
+```
+"NVDA up 5% — Your position: +$2,225"
+```
+
+This calculation uses:
+- **Price change**: Real-time (accurate to the minute)
+- **Share count**: From last sync (may be up to 24 hours old)
+- **Impact**: Real-time price × synced shares
+
+<Warning>
+If you traded that stock today, the impact calculation may be off until the next sync. The price is correct; the share count may be outdated.
+</Warning>
+
+## Manual refresh options
+
+### Force a portfolio sync
+
+```
+You: Refresh my portfolio
+
+Tendrill: Refreshing now... 🔄
+
+Done! Your portfolio data has been updated.
+• Last sync: Just now
+• Holdings: 15 positions
+• Total value: $131,450
+
+Note: Some brokerages have delays even with 
+manual refresh. If recent trades don't appear,
+they should show up by tomorrow.
+```
+
+### Check data freshness
+
+```
+You: When was my data last updated?
+
+Tendrill: 📊 Data Freshness Report
+
+Portfolio holdings: Synced today at 5:32 AM ET
+Stock prices: Real-time (as of 2:34 PM ET)
+Last news check: 2 minutes ago
+
+Your holdings data is up to date as of this morning.
+Any trades made today will sync tonight.
+```
+
+## Tips for best experience
+
+<CardGroup cols={2}>
+  <Card title="Trade in the morning?" icon="sun">
+    Data syncs overnight, so morning trades appear next day
+  </Card>
+  <Card title="Need today's trades reflected?" icon="refresh">
+    Use manual refresh, but expect some delay
+  </Card>
+  <Card title="Price alerts" icon="bell">
+    These use real-time data — always accurate to the minute
+  </Card>
+  <Card title="Portfolio summaries" icon="chart-pie">
+    Best viewed after overnight sync for full accuracy
+  </Card>
+</CardGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why does Tendrill show different values than my brokerage?">
+    Common reasons:
+    1. **Timing**: Your brokerage may show real-time; Tendrill uses last sync for shares
+    2. **Price source**: Slight differences in quote timing
+    3. **Pending transactions**: Your brokerage may include unsettled items
+    
+    Differences are usually small and resolve after the next sync.
+  </Accordion>
+  
+  <Accordion title="Can I get real-time holdings updates?">
+    Currently, Plaid connections update daily. We're working with data providers to improve this, but it's an industry-wide limitation.
+  </Accordion>
+  
+  <Accordion title="What time zone does Tendrill use?">
+    - **Market data**: Always Eastern Time (ET)
+    - **Your updates**: Delivered in your registered time zone
+    - **Sync times**: Typically overnight in Eastern Time
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Data Sync Details" icon="rotate" href="/connecting-accounts/data-sync">
+    Full details on sync frequency
+  </Card>
+  <Card title="Portfolio Impact" icon="calculator" href="/insights/portfolio-impact">
+    How impact calculations work
+  </Card>
+</CardGroup>
+

@@ -1,0 +1,217 @@
+---
+title: "Data Sync & Refresh"
+description: "How often your portfolio data updates and what data Tendrill uses"
+icon: "rotate"
+---
+
+## Always up to date
+
+Tendrill keeps your portfolio data fresh through automatic syncing and on-demand refreshes. Here's how the data flows and what to expect.
+
+## Sync frequency overview
+
+| Data Type | Update Frequency | Notes |
+|-----------|------------------|-------|
+| **Holdings** | Every 24 hours | Automatic overnight sync |
+| **Balances** | Every 24 hours | Reflects end-of-day values |
+| **Transactions** | Every 24 hours | New trades appear next day |
+| **Stock prices** | Real-time | Live market data during trading hours |
+| **News & events** | Continuous | Monitored 24/7 |
+
+<Info>
+**Real-time where it matters.** While your holdings sync daily, Tendrill monitors real-time market data to catch price movements and breaking news as they happen.
+</Info>
+
+## How data flows through Tendrill
+
+<Frame caption="Data refresh flow">
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   Your         │     │     Plaid       │     │   Tendrill      │
+│   Brokerage    │────▶│   (Secure API)  │────▶│   Servers       │
+│                │     │                 │     │                 │
+│ • Holdings     │     │ • Encrypted     │     │ • Portfolio     │
+│ • Transactions │     │ • Read-only     │     │   model         │
+│ • Balances     │     │ • Daily sync    │     │ • Analysis      │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+                                                        │
+                                                        ▼
+                        ┌─────────────────┐     ┌─────────────────┐
+                        │  Market Data    │     │   Your Phone    │
+                        │   Providers     │────▶│   📱           │
+                        │                 │     │                 │
+                        │ • Live prices   │     │ • Alerts        │
+                        │ • News feeds    │     │ • Insights      │
+                        │ • Earnings      │     │ • Conversations │
+                        └─────────────────┘     └─────────────────┘
+```
+</Frame>
+
+## Portfolio data (via Plaid)
+
+### What syncs automatically
+
+Every night (typically between 2-5 AM in your timezone), Tendrill refreshes your portfolio data:
+
+- **Current holdings** — What stocks, ETFs, and funds you own
+- **Share quantities** — How many shares of each position
+- **Account balances** — Total value of each account
+- **Cost basis** — Your purchase price (when available from brokerage)
+- **Recent transactions** — Buys and sells from the past 30 days
+
+### Timing considerations
+
+<Columns cols={2}>
+  <Card title="Trades placed during the day" icon="clock">
+    Trades executed during market hours will appear in Tendrill the following day after the overnight sync.
+  </Card>
+  <Card title="Pending transactions" icon="hourglass">
+    Unsettled trades may show as pending. They'll reflect final values after T+1 or T+2 settlement.
+  </Card>
+</Columns>
+
+### Manual refresh
+
+Need fresher data? You can trigger a sync anytime:
+
+**Via text:**
+```
+You: Refresh my portfolio
+
+Tendrill: Refreshing now... 🔄
+
+Done! Your portfolio is up to date.
+• 12 holdings synced
+• Last trade detected: AAPL buy on Jan 5
+• Current value: $127,890
+```
+
+**Via dashboard:**
+- Click the refresh icon next to any account
+- Or use the "Refresh All" button
+
+<Note>
+Manual refreshes are limited to a few per hour per account to comply with brokerage rate limits.
+</Note>
+
+## Market data (real-time)
+
+While portfolio holdings sync daily, Tendrill uses real-time market data for:
+
+### Live stock prices
+
+- **During market hours** (9:30 AM - 4:00 PM ET): Real-time quotes
+- **Pre-market & after-hours**: Extended hours pricing where available
+- **Weekends & holidays**: Last closing price
+
+### News monitoring
+
+Tendrill continuously scans thousands of sources for news about your holdings:
+
+| Source Type | Examples | Check Frequency |
+|-------------|----------|-----------------|
+| Financial news | Reuters, Bloomberg, CNBC | Real-time |
+| Company announcements | Press releases, SEC filings | Real-time |
+| Analyst reports | Upgrades, downgrades, price targets | As released |
+| Social sentiment | Major discussions and trends | Hourly |
+
+### Earnings & events calendar
+
+Tendrill maintains an up-to-date calendar of:
+- Earnings report dates
+- Ex-dividend dates
+- Stock split announcements
+- Fed meetings and economic releases
+
+## Understanding data freshness in alerts
+
+When Tendrill sends you an alert, here's what data it's using:
+
+<Frame>
+```
+┌─────────────────────────────────────────────┐
+│ 💬 Tendrill                       Today 10:30 AM │
+├─────────────────────────────────────────────┤
+│ $NVDA is up 4.2% this morning after        │
+│ strong AI chip demand forecasts. 📈        │
+│                                             │
+│ Your position: 50 shares ← From last sync  │
+│ Current price: $892.45  ← Real-time        │
+│ Your gain today: +$1,870 ← Calculated live │
+│                                             │
+│ I'll let you know if it moves               │
+│ significantly from here.                    │
+└─────────────────────────────────────────────┘
+```
+</Frame>
+
+## Handling data discrepancies
+
+Sometimes you might notice small differences between Tendrill and your brokerage:
+
+### Common causes
+
+| Discrepancy | Likely Cause | Resolution |
+|-------------|--------------|------------|
+| Different share count | Recent trade not yet synced | Wait for next sync or manual refresh |
+| Value doesn't match | Price timing differences | Tendrill may use a different quote time |
+| Missing position | New purchase | Will appear after overnight sync |
+| Extra position | Recent sale | Will update after overnight sync |
+
+### When to be concerned
+
+<Warning>
+Contact support if you notice:
+- Holdings missing for more than 48 hours after purchase
+- Significant value discrepancies that persist after refresh
+- Positions showing that you've never owned
+</Warning>
+
+## Cost basis data
+
+Cost basis (your original purchase price) is important for calculating gains and losses:
+
+| Scenario | Cost Basis Availability |
+|----------|------------------------|
+| Stocks purchased at current brokerage | Usually available |
+| Transferred positions | May not transfer with cost basis |
+| Older purchases | Depends on brokerage records |
+| Inherited securities | Often shows as $0 cost basis |
+
+<Tip>
+If your cost basis is missing or incorrect, your gain/loss calculations may be off. You can often update cost basis directly with your brokerage.
+</Tip>
+
+## Data retention
+
+Tendrill's approach to your data:
+
+- **Active data**: Kept as long as your account is connected
+- **After disconnection**: Deleted within 24 hours
+- **Conversation history**: Retained separately (not tied to portfolio data)
+- **No third-party sharing**: Your data is never sold or shared
+
+<Card title="Learn about our privacy practices" icon="shield-check" href="/privacy-security/data-protection">
+  Read our full data protection policy
+</Card>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why do I see yesterday's balance?">
+    Portfolio balances reflect the most recent overnight sync. For the latest value, trigger a manual refresh or check your brokerage directly for real-time balance.
+  </Accordion>
+  
+  <Accordion title="How do stock splits affect my data?">
+    Stock splits are reflected in both share count and price automatically. There may be a brief period where data looks unusual during the split processing.
+  </Accordion>
+  
+  <Accordion title="Are dividend reinvestments captured?">
+    Yes, dividend reinvestments (DRIP) will appear as new purchases in your transaction history and update your share counts.
+  </Accordion>
+  
+  <Accordion title="What about options and other derivatives?">
+    Options positions may have limited support depending on your brokerage. Stock holdings are fully supported across all connected accounts.
+  </Accordion>
+</AccordionGroup>
+

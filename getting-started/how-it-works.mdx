@@ -1,0 +1,183 @@
+---
+title: "How Tendrill Works"
+description: "The simple flow from connecting your accounts to receiving personalized insights"
+icon: "gears"
+---
+
+## The Tendrill experience in 3 steps
+
+Tendrill is designed to be effortlessly simple. Here's how it works from start to finish:
+
+<Steps>
+  <Step title="Connect your brokerage accounts">
+    Link your investment accounts securely through Plaid. Tendrill builds a real-time model of your holdings across all your brokerages — stocks, ETFs, mutual funds, and more.
+    
+    <Tip>You can connect multiple accounts from different brokerages. Tendrill aggregates everything into a single, unified view of your portfolio.</Tip>
+  </Step>
+  <Step title="Tendrill monitors everything">
+    Once connected, Tendrill continuously watches your portfolio for important events:
+    - **Earnings announcements** from companies you own
+    - **Significant price movements** in your holdings
+    - **Breaking news** that affects your positions
+    - **Macro signals** like Fed decisions and economic data
+    
+    Everything is filtered for relevance to YOUR portfolio — no generic market noise.
+  </Step>
+  <Step title="Receive insights via text">
+    When something important happens, Tendrill sends you a clear, actionable text message. You can also text Tendrill anytime with questions about your portfolio.
+    
+    All communication happens through SMS or iMessage — no app to download, no dashboard to check.
+  </Step>
+</Steps>
+
+## Visual overview
+
+<Frame caption="The Tendrill workflow: Connect → Monitor → Receive Insights">
+```
+┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│                  │     │                  │     │                  │
+│   Your Accounts  │────▶│     Tendrill     │────▶│   Your Phone     │
+│                  │     │                  │     │                  │
+│  • Fidelity      │     │  • Monitors 24/7 │     │  💬 SMS/iMessage │
+│  • Schwab        │     │  • Analyzes news │     │                  │
+│  • Robinhood     │     │  • Tracks prices │     │  "NVDA is up 5%  │
+│  • E*TRADE       │     │  • Watches events│     │   after earnings.│
+│                  │     │                  │     │   Your gain:     │
+└──────────────────┘     └──────────────────┘     │   +$2,400"       │
+                                                  └──────────────────┘
+```
+</Frame>
+
+## What happens behind the scenes
+
+### 1. Secure connection via Plaid
+
+When you connect your brokerage, Tendrill uses Plaid — the same secure infrastructure used by Venmo, Coinbase, and thousands of financial apps. Here's what happens:
+
+- You authenticate directly with your brokerage (Tendrill never sees your password)
+- Plaid establishes a read-only connection to your account
+- Only your holdings and positions are shared — we can't move money or make trades
+
+<Info>
+**Read-only access only.** Tendrill can see your holdings but cannot execute trades, transfer funds, or modify your account in any way.
+</Info>
+
+### 2. Portfolio model creation
+
+Once connected, Tendrill builds a comprehensive model of your portfolio:
+
+| Data Point | What We Track | Why It Matters |
+|------------|--------------|----------------|
+| **Holdings** | Symbols, quantities, cost basis | Understand your positions |
+| **Allocation** | Sector weights, diversification | Identify concentration risk |
+| **Performance** | Gains/losses, daily changes | Track how you're doing |
+| **Events** | Earnings dates, ex-dividend dates | Know what's coming |
+
+### 3. Continuous monitoring
+
+Tendrill's AI continuously scans for events relevant to your portfolio:
+
+<CardGroup cols={2}>
+  <Card title="Market data" icon="chart-line">
+    Real-time and delayed price feeds to track significant movements
+  </Card>
+  <Card title="News feeds" icon="newspaper">
+    Thousands of sources analyzed for relevant company and sector news
+  </Card>
+  <Card title="Earnings calendar" icon="calendar">
+    Upcoming and recent earnings reports for your holdings
+  </Card>
+  <Card title="SEC filings" icon="file-contract">
+    Important filings like 10-Ks, 8-Ks, and insider transactions
+  </Card>
+</CardGroup>
+
+### 4. Intelligent filtering
+
+Not every piece of news deserves your attention. Tendrill uses AI to:
+
+- **Assess relevance** — Does this affect companies you own?
+- **Calculate impact** — How much does this move the needle on your portfolio?
+- **Determine urgency** — Is this something you need to know now?
+- **Generate insights** — What does this mean for you specifically?
+
+### 5. Personalized delivery
+
+When something passes the relevance threshold, Tendrill crafts a personalized message:
+
+<Frame>
+```
+┌─────────────────────────────────────────────┐
+│ 💬 Tendrill                       Today 2:15 PM │
+├─────────────────────────────────────────────┤
+│ Heads up: The Fed just held rates steady   │
+│ at 5.25-5.50%, as expected.                │
+│                                             │
+│ Your portfolio impact:                      │
+│ • Tech holdings (+1.2%): $890              │
+│ • REITs (+0.8%): $340                      │
+│ • Total: +$1,230 since announcement        │
+│                                             │
+│ Rate-sensitive stocks typically benefit    │
+│ from rate pause signals. Your REIT         │
+│ exposure may see continued strength.       │
+└─────────────────────────────────────────────┘
+```
+</Frame>
+
+## Data freshness
+
+| Data Type | Update Frequency |
+|-----------|------------------|
+| Portfolio holdings | Synced daily (or on-demand refresh) |
+| Stock prices | Real-time during market hours |
+| News & events | Continuous monitoring |
+| Earnings data | Updated as reports are released |
+
+<Note>
+Brokerage data refreshes may take up to 24 hours depending on your institution. You can manually trigger a refresh anytime by texting "refresh my portfolio" to Tendrill.
+</Note>
+
+## The conversation loop
+
+Tendrill isn't just one-way alerts. You can text back anytime:
+
+<Frame caption="Example conversation with Tendrill">
+```
+You: How's my portfolio doing today?
+
+Tendrill: Your portfolio is up $1,847 (+0.8%) today.
+
+Top movers:
+• AAPL +$620 (+1.4%)
+• MSFT +$380 (+0.9%)  
+• NVDA +$290 (+0.6%)
+
+Your tech allocation (62%) is driving most of today's gains.
+Want a breakdown by sector?
+
+You: Yes please
+
+Tendrill: Here's your sector performance today:
+
+📈 Technology: +$1,290 (+1.1%)
+📈 Healthcare: +$340 (+0.6%)
+📈 Financials: +$180 (+0.4%)
+📉 Energy: -$63 (-0.2%)
+
+Your tech overweight is working well in this environment. 
+Would you like to see how this compares to the S&P 500?
+```
+</Frame>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Quick Start Guide" icon="rocket" href="/getting-started/quickstart">
+    Get set up in under 5 minutes
+  </Card>
+  <Card title="Supported Brokerages" icon="building-columns" href="/getting-started/supported-brokerages">
+    Check if your brokerage is supported
+  </Card>
+</CardGroup>
+
