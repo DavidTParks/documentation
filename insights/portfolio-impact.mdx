@@ -10,25 +10,16 @@ When Tendrill sends you an alert like "Your position is up +$6,600 (+3.4%)", wha
 
 ## Anatomy of a portfolio impact alert
 
-<Frame caption="Breaking down a typical alert">
-```
-┌─────────────────────────────────────────────┐
-│ "$NVDA just jumped 3.2% after earnings"    │
-│                                             │
-│ Your position: +$6,600 (+3.4%)             │
-│ ────────────────────────────────────────    │
-│ │          │        │                       │
-│ │          │        └─ Percentage change    │
-│ │          └── Dollar change in your value  │
-│ └── Your specific holdings moved            │
-│                                             │
-│ Position details:                           │
-│ • Shares owned: 50                         │
-│ • Previous value: $194,100                 │
-│ • Current value: $200,700                  │
-└─────────────────────────────────────────────┘
-```
-</Frame>
+**Example alert:** "$NVDA just jumped 3.2% after earnings"
+
+**Your position: +$6,600 (+3.4%)**
+- **+$6,600** = Dollar change in your value
+- **+3.4%** = Percentage change
+
+**Position details:**
+- Shares owned: 50
+- Previous value: $194,100
+- Current value: $200,700
 
 ## Understanding each component
 
@@ -81,18 +72,14 @@ Portfolio impact: +1.2% of total
 
 ### Earnings alerts
 
-<Frame>
-```
-📊 AAPL earnings results:
-
-Stock reaction: +5.2%
-Your position: +$1,040 (+5.2%)
-Portfolio impact: +0.8% of total value
-
-You own 50 shares worth $21,040 (now)
-AAPL is 8% of your portfolio
-```
-</Frame>
+> **AAPL earnings results:**
+>
+> Stock reaction: +5.2%
+> Your position: +$1,040 (+5.2%)
+> Portfolio impact: +0.8% of total value
+>
+> You own 50 shares worth $21,040 (now)
+> AAPL is 8% of your portfolio
 
 **How to interpret:**
 - Apple went up 5.2% on earnings
@@ -101,19 +88,15 @@ AAPL is 8% of your portfolio
 
 ### Daily summary
 
-<Frame>
-```
-📊 Today's portfolio: +$2,340 (+1.8%)
-
-Top contributors:
-• NVDA: +$1,200 (+2.7%)
-• AAPL: +$620 (+3.0%)
-• MSFT: +$380 (+1.9%)
-
-Top detractor:
-• TSLA: -$180 (-2.9%)
-```
-</Frame>
+> **Today's portfolio: +$2,340 (+1.8%)**
+>
+> Top contributors:
+> - NVDA: +$1,200 (+2.7%)
+> - AAPL: +$620 (+3.0%)
+> - MSFT: +$380 (+1.9%)
+>
+> Top detractor:
+> - TSLA: -$180 (-2.9%)
 
 **How to interpret:**
 - Your total portfolio gained $2,340
@@ -122,17 +105,13 @@ Top detractor:
 
 ### Decline alerts
 
-<Frame>
-```
-⚠️ TSLA down 8% today
-
-Your position: -$992 (-8.0%)
-Portfolio impact: -0.9% of total
-
-You own 15 shares worth $11,408 (now)
-TSLA is 8.7% of your portfolio
-```
-</Frame>
+> **TSLA down 8% today**
+>
+> Your position: -$992 (-8.0%)
+> Portfolio impact: -0.9% of total
+>
+> You own 15 shares worth $11,408 (now)
+> TSLA is 8.7% of your portfolio
 
 **How to interpret:**
 - Tesla dropped 8%

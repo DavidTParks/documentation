@@ -47,36 +47,21 @@ When you connect your brokerage:
 
 <Steps>
   <Step title="You authenticate directly with your brokerage">
-    You enter your credentials into Plaid's secure interface — not Tendrill
+    You enter your credentials into Plaid's secure interface - not Tendrill
   </Step>
   <Step title="Plaid verifies and establishes connection">
     Plaid communicates directly with your brokerage using encrypted channels
   </Step>
   <Step title="Tendrill receives only portfolio data">
-    We get your holdings and balances — never your username, password, or account numbers
+    We get your holdings and balances - never your username, password, or account numbers
   </Step>
 </Steps>
 
-<Frame caption="Data flow security">
-```
-┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│    You       │     │    Plaid     │     │  Tendrill    │
-└──────────────┘     └──────────────┘     └──────────────┘
-       │                    │                    │
-       │  Username/Password │                    │
-       │ ──────────────────▶│                    │
-       │   (encrypted)      │                    │
-       │                    │                    │
-       │                    │  Holdings only     │
-       │                    │ ──────────────────▶│
-       │                    │  (no credentials)  │
-       │                    │                    │
-       
-✓ Tendrill NEVER sees your login credentials
-✓ All data encrypted in transit (TLS 1.2+)
-✓ All data encrypted at rest (AES-256)
-```
-</Frame>
+**You** -> *Username/Password (encrypted)* -> **Plaid** -> *Holdings only (no credentials)* -> **Tendrill**
+
+<Check>Tendrill NEVER sees your login credentials</Check>
+<Check>All data encrypted in transit (TLS 1.2+)</Check>
+<Check>All data encrypted at rest (AES-256)</Check>
 
 ### Read-only access
 
@@ -147,7 +132,7 @@ Tendrill stores the minimum data necessary to provide the service:
 | Phone number | Yes | Your account identity and message delivery |
 | Holdings data | Yes | Portfolio monitoring and insights |
 | Conversation history | Yes | Context for follow-up questions |
-| Brokerage credentials | **No** | Never stored — handled only by Plaid |
+| Brokerage credentials | **No** | Never stored - handled only by Plaid |
 | Account numbers | **No** | Not needed for our service |
 | Social Security Number | **No** | Never requested or accessed |
 
@@ -174,10 +159,10 @@ You're always in control of your data:
 
 Our security practices are validated by:
 
-- **Plaid's security requirements** — We must meet their standards to use their service
-- **Cloud provider certifications** — AWS/GCP security certifications
-- **Regular penetration testing** — Third-party security assessments
-- **Bug bounty program** — Security researchers help identify vulnerabilities
+- **Plaid's security requirements** - We must meet their standards to use their service
+- **Cloud provider certifications** - AWS/GCP security certifications
+- **Regular penetration testing** - Third-party security assessments
+- **Bug bounty program** - Security researchers help identify vulnerabilities
 
 ## FAQ
 
@@ -204,7 +189,7 @@ Our security practices are validated by:
 If you discover a potential security vulnerability:
 
 <Card title="Report a security issue" icon="bug" href="mailto:security@tendrill.ai">
-  Contact security@tendrill.ai — we take all reports seriously
+  Contact security@tendrill.ai - we take all reports seriously
 </Card>
 
 ## Next steps

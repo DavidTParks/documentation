@@ -7,7 +7,7 @@
     "light": "#888f78",
     "dark": "#888f78"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "navigation": {
     "tabs": [
       {
@@ -104,6 +104,11 @@
           "icon": "envelope"
         }
       ]
+    }
+  },
+  "seo": {
+    "metatags": {
+        "canonical": "https:/tendrill.ai"
     }
   },
   "logo": {

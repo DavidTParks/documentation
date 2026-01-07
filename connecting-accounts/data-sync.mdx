@@ -24,28 +24,20 @@ Tendrill keeps your portfolio data fresh through automatic syncing and on-demand
 
 ## How data flows through Tendrill
 
-<Frame caption="Data refresh flow">
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│   Your         │     │     Plaid       │     │   Tendrill      │
-│   Brokerage    │────▶│   (Secure API)  │────▶│   Servers       │
-│                │     │                 │     │                 │
-│ • Holdings     │     │ • Encrypted     │     │ • Portfolio     │
-│ • Transactions │     │ • Read-only     │     │   model         │
-│ • Balances     │     │ • Daily sync    │     │ • Analysis      │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-                                                        │
-                                                        ▼
-                        ┌─────────────────┐     ┌─────────────────┐
-                        │  Market Data    │     │   Your Phone    │
-                        │   Providers     │────▶│   📱           │
-                        │                 │     │                 │
-                        │ • Live prices   │     │ • Alerts        │
-                        │ • News feeds    │     │ • Insights      │
-                        │ • Earnings      │     │ • Conversations │
-                        └─────────────────┘     └─────────────────┘
-```
-</Frame>
+<CardGroup cols={2}>
+  <Card title="Your Brokerage" icon="building-columns">
+    Holdings, transactions, and balances flow securely to Plaid
+  </Card>
+  <Card title="Plaid (Secure API)" icon="shield-check">
+    Encrypted, read-only access with daily sync
+  </Card>
+  <Card title="Tendrill Servers" icon="server">
+    Portfolio model and analysis, combined with market data
+  </Card>
+  <Card title="Your Phone" icon="mobile">
+    Alerts, insights, and conversations delivered via text
+  </Card>
+</CardGroup>
 
 ## Portfolio data (via Plaid)
 
@@ -53,11 +45,11 @@ Tendrill keeps your portfolio data fresh through automatic syncing and on-demand
 
 Every night (typically between 2-5 AM in your timezone), Tendrill refreshes your portfolio data:
 
-- **Current holdings** — What stocks, ETFs, and funds you own
-- **Share quantities** — How many shares of each position
-- **Account balances** — Total value of each account
-- **Cost basis** — Your purchase price (when available from brokerage)
-- **Recent transactions** — Buys and sells from the past 30 days
+- **Current holdings** - What stocks, ETFs, and funds you own
+- **Share quantities** - How many shares of each position
+- **Account balances** - Total value of each account
+- **Cost basis** - Your purchase price (when available from brokerage)
+- **Recent transactions** - Buys and sells from the past 30 days
 
 ### Timing considerations
 
@@ -127,23 +119,15 @@ Tendrill maintains an up-to-date calendar of:
 
 When Tendrill sends you an alert, here's what data it's using:
 
-<Frame>
-```
-┌─────────────────────────────────────────────┐
-│ 💬 Tendrill                       Today 10:30 AM │
-├─────────────────────────────────────────────┤
-│ $NVDA is up 4.2% this morning after        │
-│ strong AI chip demand forecasts. 📈        │
-│                                             │
-│ Your position: 50 shares ← From last sync  │
-│ Current price: $892.45  ← Real-time        │
-│ Your gain today: +$1,870 ← Calculated live │
-│                                             │
-│ I'll let you know if it moves               │
-│ significantly from here.                    │
-└─────────────────────────────────────────────┘
-```
-</Frame>
+> **Tendrill** - Today 10:30 AM
+>
+> $NVDA is up 4.2% this morning after strong AI chip demand forecasts.
+>
+> - Your position: 50 shares *(from last sync)*
+> - Current price: $892.45 *(real-time)*
+> - Your gain today: +$1,870 *(calculated live)*
+>
+> I'll let you know if it moves significantly from here.
 
 ## Handling data discrepancies
 

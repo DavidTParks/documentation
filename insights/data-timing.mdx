@@ -108,19 +108,12 @@ Tendrill responds with:
 
 Tendrill tells you when data might be stale:
 
-<Frame>
-```
-┌─────────────────────────────────────────────┐
-│ 📊 Your Portfolio                           │
-│                                             │
-│ Total: $131,200 (as of 4:00 PM ET)         │
-│ Holdings synced: Today 5:30 AM             │
-│                                             │
-│ Note: Any trades made today will appear    │
-│ after tonight's sync.                       │
-└─────────────────────────────────────────────┘
-```
-</Frame>
+> **Your Portfolio**
+>
+> Total: $131,200 (as of 4:00 PM ET)
+> Holdings synced: Today 5:30 AM
+>
+> *Note: Any trades made today will appear after tonight's sync.*
 
 ## Why isn't everything real-time?
 
@@ -136,16 +129,16 @@ Brokerages don't provide instant APIs for all data:
 
 Given these constraints, Tendrill prioritizes:
 
-1. **Real-time prices** — What matters most for alerts
-2. **Fast news** — Breaking information that affects decisions
-3. **Accurate holdings** — Daily sync ensures completeness
+1. **Real-time prices** - What matters most for alerts
+2. **Fast news** - Breaking information that affects decisions
+3. **Accurate holdings** - Daily sync ensures completeness
 
 ## Interpreting data in alerts
 
 When you see portfolio impact numbers:
 
 ```
-"NVDA up 5% — Your position: +$2,225"
+"NVDA up 5% - Your position: +$2,225"
 ```
 
 This calculation uses:
@@ -201,7 +194,7 @@ Any trades made today will sync tonight.
     Use manual refresh, but expect some delay
   </Card>
   <Card title="Price alerts" icon="bell">
-    These use real-time data — always accurate to the minute
+    These use real-time data - always accurate to the minute
   </Card>
   <Card title="Portfolio summaries" icon="chart-pie">
     Best viewed after overnight sync for full accuracy
